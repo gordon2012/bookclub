@@ -18,10 +18,8 @@ class BooksController extends AppController
      */
     public function index()
     {
-        $books = $this->paginate($this->Books);
-
+        $books = $this->Books->find('all');
         $this->set(compact('books'));
-        $this->set('_serialize', ['books']);
     }
 
     /**

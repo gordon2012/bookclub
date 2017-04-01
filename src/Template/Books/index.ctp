@@ -1,46 +1,30 @@
 <?php
-/**
-  * @var \App\View\AppView $this
-  */
+    $this->layout = false;
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Book'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="books index large-9 medium-8 columns content">
-    <h3><?= __('Books') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Book Club</title>
+        <?= $this->Html->meta('icon') ?>
+        <?= $this->Html->css('base.css') ?>
+        <?= $this->Html->css('bookclub.css') ?>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="brand">bookclub</div>
+            <nav><button>all books</button><button>my books</button><button>settings</button></nav>
+        </header>
+
+        <section>
             <?php foreach ($books as $book): ?>
-            <tr>
-                <td><?= $this->Number->format($book->id) ?></td>
-                <td><?= h($book->title) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $book->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $book->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $book->id], ['confirm' => __('Are you sure you want to delete # {0}?', $book->id)]) ?>
-                </td>
-            </tr>
+                <div><strong><?= $book->id ?>: </strong><?= $book->title ?></div>
             <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
-</div>
+        </section>
+
+        <footer>Copyright 2017 Gordon Doskas</footer>
+    </body>
+</html>

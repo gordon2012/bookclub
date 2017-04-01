@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #555;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+}
+.brand {
+    flex: 1 0 150px;
+    text-align: center;
+}
+nav {
+    background: magenta;    
+}
+button {
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    background: #555;
+    color: whitesmoke;
+    padding: 8px;
+}
+
+section {
+    flex: 1;
+}
