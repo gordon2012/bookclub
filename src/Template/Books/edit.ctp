@@ -21,6 +21,7 @@
         <legend><?= __('Edit Book') ?></legend>
         <?php
             echo $this->Form->control('title');
+            echo $this->Form->control('user_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

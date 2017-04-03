@@ -23,5 +23,9 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($book->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('User Id') ?></th>
+            <td><?= $this->Number->format($book->user_id) ?></td>
+        </tr>
     </table>
 </div>

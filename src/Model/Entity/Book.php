@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $title
+ * @property int $user_id
  */
 class Book extends Entity
 {

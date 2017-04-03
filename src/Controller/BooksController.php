@@ -18,8 +18,10 @@ class BooksController extends AppController
      */
     public function index()
     {
-        $books = $this->Books->find('all');
+        $books = $this->paginate($this->Books);
+
         $this->set(compact('books'));
+        $this->set('_serialize', ['books']);
     }
 
     /**
@@ -49,6 +51,7 @@ class BooksController extends AppController
         $book = $this->Books->newEntity();
         if ($this->request->is('post')) {
             $book = $this->Books->patchEntity($book, $this->request->getData());
+            $book->user_id = $this->Auth->user('id');
             if ($this->Books->save($book)) {
                 $this->Flash->success(__('The book has been saved.'));
 
