@@ -33,6 +33,10 @@ class BooksController extends AppController
      */
     public function view($id = null)
     {
+        $query = $this->Books->find('all')
+            ->where("Books.id = {$id}")->first();
+        if(empty($query)) return $this->redirect(['action' => 'index']);;
+
         $book = $this->Books->get($id, [
             'contain' => []
         ]);
