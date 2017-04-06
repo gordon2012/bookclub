@@ -1,31 +1,38 @@
-<?php
-/**
-  * @var \App\View\AppView $this
-  */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Book'), ['action' => 'edit', $book->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Book'), ['action' => 'delete', $book->id], ['confirm' => __('Are you sure you want to delete # {0}?', $book->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Books'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Book'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="books view large-9 medium-8 columns content">
-    <h3><?= h($book->title) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Title') ?></th>
-            <td><?= h($book->title) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($book->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('User Id') ?></th>
-            <td><?= $this->Number->format($book->user_id) ?></td>
-        </tr>
-    </table>
+<?= $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css') ?>
+
+<div id="app">
+    <div class="hero">
+        <div class="hero-body">
+            <Book v-bind:book="book"></Book>
+            <div class="container box is-dark">
+            <p class="title">
+                {{ message }}
+            </p>
+            <li v-for="num in arr" class="subtitle">
+                {{ num }}
+            </li></div>
+        </div>
+    </div>
 </div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+
+var book = <?= $book ?>;
+console.log(book);
+
+Vue.component('Book', {
+    props: ['book'],
+    template: '<h1 class="container box title">{{ book.title }}</h1>'
+});
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        book: book,
+        message: 'Hello, Vue! Lets read a book.',
+        arr: [1, 2, 3, 4]
+    }
+});
+
+</script>
