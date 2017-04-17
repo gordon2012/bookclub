@@ -1,0 +1,54 @@
+/* Debug */
+.g {
+    background: chartreuse;
+}
+.m {
+    background: magenta;
+}
+.y {
+    background: yellow;
+}
+.o {
+    background: orange;
+}
+.ws {
+  background: whitesmoke;
+}
+.lg {
+  background: lightgrey;
+}
+.dg {
+  background: #2f2f2f;
+  color: whitesmoke;
+}
+.dg * {
+    color: whitesmoke !important;
+}
+.nav-toggle span {
+    background-color: whitesmoke;
+}
+.nav-toggle:hover span {
+    background-color: #2f2f2f;
+}
+
+/* Flexbox structure */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.main.wrap {
+    flex: 1;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+.inner {
+    flex-basis: 1000px;
+}
+
+/* Main content */
+.inner {
+    padding: 16px;
+}

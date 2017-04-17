@@ -7,47 +7,48 @@
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('bulma.css') ?>
+    <?= $this->Html->css('style.css') ?>
+
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body>
 
-    <div class="columns">
-        <div class="column is-10 is-offset-1">
+<body><div class="app">
 
-            <nav class="nav">
-                <div class="nav-left is-dark">
-                    <div class="nav-item">
-                        <img src="http://lorempixel.com/300/100/" alt="" />
-                    </div>
-                    <div class="nav-item">
-                        <?= $this->Html->link('Home', ['controller' => 'Pages', 'action' => 'display', 'landing']) ?>
-                    </div>
-                </div>
 
-                <span class="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-                <div class="nav-right nav-menu">
-                    <div class="nav-item">
-                        <?= $this->Html->link('My Books', ['controller' => 'Books', 'action' => 'index']) ?>
-                    </div>
-                    <div class="nav-item">
-                        <?= $this->Html->link('All Books', ['controller' => 'Books', 'action' => 'index']) ?>
-                    </div>
-                    <div class="nav-item">Options</div>
-                </div>
-
-            </nav>
-        </div>
+<nav class="nav dg">
+    <div class="nav-left" style="padding-left: 16px;">
+        <div class="nav-item is-brand"><strong>bookclub</strong></div>
+        <div class="nav-item"><?= $this->Html->link('Home', ['controller' => 'Pages', 'action' => 'display', 'landing']) ?></div>
     </div>
+    <span class="nav-toggle" style="color: white !important;">
+        <span style="color: white !important;"></span>
+        <span></span>
+        <span></span>
+    </span>
+    <div class="nav-right nav-menu">
+        <div class="nav-item"><?= $this->Html->link('My Books', ['controller' => 'Books', 'action' => 'index']) ?></div>
+        <div class="nav-item"><?= $this->Html->link('All Books', ['controller' => 'Books', 'action' => 'index']) ?></div>
+        <div class="nav-item">Options</div>
+        <div class="nav-item">Account</div>
+    </div>
+</nav>
 
-    <?= $this->Flash->render() ?>
-    <?= $this->fetch('content') ?>
-    <footer>FOOTER</footer>
-</body>
+<div class="main wrap ws">
+    <div class="main inner">
+        <?= $this->Flash->render() ?>
+        <?= $this->fetch('content') ?>
+    </div>
+</div>
+
+<footer class="wrap dg">
+    <div class="inner">
+        <span><strong>bookclub</strong> by <a href="http://gordondoskas.com" target="_blank">Gordon Doskas</a>. Copyright 2017.</span>
+    </div>
+</footer>
+
+
+</div></body>
 </html>
