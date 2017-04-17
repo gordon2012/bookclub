@@ -23,16 +23,16 @@
         <div class="nav-item is-brand"><strong>bookclub</strong></div>
         <div class="nav-item"><?= $this->Html->link('Home', ['controller' => 'Pages', 'action' => 'display', 'landing']) ?></div>
     </div>
-    <span class="nav-toggle" style="color: white !important;">
-        <span style="color: white !important;"></span>
+    <span class="nav-toggle">
+        <span></span>
         <span></span>
         <span></span>
     </span>
-    <div class="nav-right nav-menu">
+    <div class="nav-right dg nav-menu">
         <div class="nav-item"><?= $this->Html->link('My Books', ['controller' => 'Books', 'action' => 'index']) ?></div>
         <div class="nav-item"><?= $this->Html->link('All Books', ['controller' => 'Books', 'action' => 'index']) ?></div>
-        <div class="nav-item">Options</div>
-        <div class="nav-item">Account</div>
+        <div class="nav-item"><a href="#">Options</a></div>
+        <div class="nav-item"><a href="#">Account</a></div>
     </div>
 </nav>
 
@@ -50,5 +50,15 @@
 </footer>
 
 
-</div></body>
+</div>
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementsByClassName('nav-toggle')[0].addEventListener('click', () => {
+        document.getElementsByClassName('nav-menu')[0].classList.toggle('is-active');
+    });
+})
+
+</script>
+</body>
 </html>
