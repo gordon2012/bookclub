@@ -15,10 +15,10 @@
     <?= $this->fetch('script') ?>
 </head>
 
-<body><div class="app">
+<body><div class="app ws">
 
 
-<nav class="nav dg">
+<nav class="nav nav-dark">
     <div class="nav-left" style="padding-left: 16px;">
         <div class="nav-item is-brand"><strong>bookclub</strong></div>
         <div class="nav-item"><?= $this->Html->link('Home', ['controller' => 'Pages', 'action' => 'display', 'landing']) ?></div>
@@ -28,7 +28,7 @@
         <span></span>
         <span></span>
     </span>
-    <div class="nav-right dg nav-menu">
+    <div class="nav-right nav-menu">
         <div class="nav-item"><?= $this->Html->link('My Books', ['controller' => 'Books', 'action' => 'index']) ?></div>
         <div class="nav-item"><?= $this->Html->link('All Books', ['controller' => 'Books', 'action' => 'index']) ?></div>
         <div class="nav-item"><a href="#">Options</a></div>
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-<footer class="wrap dg">
+<footer class="wrap nav-dark">
     <div class="inner">
         <span><strong>bookclub</strong> by <a href="http://gordondoskas.com" target="_blank">Gordon Doskas</a>. Copyright 2017.</span>
     </div>

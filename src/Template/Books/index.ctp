@@ -12,3 +12,11 @@
         </div>
     <?php endforeach; ?>
 </div>
+
+<div class="columns is-multiline">
+    <?php foreach(array(1,2,3,4,5,6,7,8,9,10,11,12) as $num): ?>
+        <div class="column is-6">
+            <div class="box" style="height: 300px;"><h1><?= $num ?></h1></div>
+        </div>
+    <?php endforeach; ?>
+</div>

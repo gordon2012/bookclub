@@ -14,15 +14,11 @@
 .ws {
   background: whitesmoke;
 }
-.lg {
-  background: lightgrey;
-}
-.dg {
-  background: #2f2f2f;
+
+/* Color */
+.nav-dark, .nav-dark a, .nav-dark strong {
+  background: #2f2f2f !important;
   color: whitesmoke;
-}
-.dg * {
-    color: whitesmoke !important;
 }
 .nav-toggle span {
     background-color: whitesmoke;
@@ -46,9 +42,14 @@
 }
 .inner {
     flex-basis: 1000px;
+    padding: 16px;
 }
 
-/* Main content */
-.inner {
-    padding: 16px;
+/* Sticky Navbar */
+.nav {
+    position: fixed;
+    width: 100%;
+}
+.main.wrap {
+    margin-top: 50px;
 }
