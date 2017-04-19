@@ -15,7 +15,7 @@
 
 <div class="columns is-multiline">
     <?php $colors = array('g', 'm', 'y'); ?>
-    <?php foreach(array(0,1,2,3,4,5,6,7,8,9,10,11,12) as $num): ?>
+    <?php foreach(array(0,1,2,3,4,5,6,7,8,9,10,11,12,13) as $num): ?>
         <div class="column is-6">
             <div class="box <?= $colors[$num % 3] ?>" style="height: 300px;"><h1><?= $num ?></h1></div>
         </div>

@@ -9,6 +9,7 @@
     <?= $this->Html->css('bulma.css') ?>
     <?= $this->Html->css('style.css') ?>
 
+    <?= $this->Html->script('jquery.min.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -36,6 +37,10 @@
     </div>
 </nav>
 
+<div class="return">
+    <span>
+</div>
+
 <div class="main wrap ws">
     <div class="main inner">
         <?= $this->Flash->render() ?>
@@ -53,11 +58,39 @@
 </div>
 <script>
 
+// Return arrow
+//
+let scrollpos = 0;
+let ticking = false;
+window.addEventListener('scroll', () => {
+    scrollpos = window.scrollY;
+    if(!ticking) {
+        window.requestAnimationFrame(() => {
+            console.log(scrollpos);
+            if(scrollpos > 0) {
+                $('.return').fadeIn();
+            } else {
+                $('.return').fadeOut();
+            }
+            ticking = false;
+        });
+    }
+    ticking = true;
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger menu
+    //
     document.getElementsByClassName('nav-toggle')[0].addEventListener('click', () => {
         document.getElementsByClassName('nav-menu')[0].classList.toggle('is-active');
     });
-})
+});
+
+$('.return').click(() => {
+    window.scrollTo(0,0);
+});
+
+
 
 </script>
 </body>
